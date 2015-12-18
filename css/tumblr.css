@@ -1,0 +1,15 @@
+/* Tumblr Style http://blog.jnkoury.com */
+
+article {
+	margin-bottom: 25px;
+}
+
+img {
+	max-width: 690px;
+	height: auto;
+}
+
+article.link a {
+	text-decoration: underline;
+	font-size: 24px;
+}
