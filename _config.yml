@@ -1,0 +1,18 @@
+# Site settings
+title: 'John Koury, Architect'
+company_name: 'John Koury, Architect'
+baseurl: ''
+imagebase: '/dist/images'
+
+# Build settings
+permalink: pretty
+
+exclude: [
+  'node_modules',
+  'package.json',
+  'gulpfile.js',
+  'README.md',
+  'SOURCE'
+]
+
+languages: ['en']

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body class="portfolio{% if page.commercial %} commercial{% endif %}{% if page.residential %} residential{% endif %}{% if page.bodyClasses %} {{ page.bodyClasses }}{% endif %}">
+<div id="wrapper">
+  {% include header.html %}
+  {% include nav.html %}
+  <section>
+  	<article>
+  		{{ content }}
+  		<div class="description">
+  			<h2>{{ page.title }}{% if page.reference %}<sup>{{ page.reference }}</sup>{% endif %}</h2>
+  			<p>{{ page.description }}</p>
+  		</div>
+  	</article>
+  </section>
+  {% include footer.html %}
+</div>
+{% include scripts.html %}
+</body>
+</html>
