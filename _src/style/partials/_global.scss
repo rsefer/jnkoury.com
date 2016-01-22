@@ -294,20 +294,27 @@ sup {
   padding-top: 10px;
   text-align: center;
 
+  &.double,
   &.triple {
 
-    .denver1 & {
-      height: 180px;
+    padding-top: 5px;
 
-      a {
-        display: inline-block;
-        overflow: hidden;
-        width: 92px;
-        height: 52px;
-      }
-
+    a {
+      display: inline-block;
+      overflow: hidden;
+      padding-top: 5px;
+      width: 92px;
+      height: 52px;
     }
 
+  }
+
+  &.double {
+    height: 115px;
+  }
+
+  &.triple {
+    height: 190px;
   }
 
   img {
