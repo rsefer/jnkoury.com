@@ -300,6 +300,7 @@ sup {
     padding-top: 5px;
 
     a {
+      vertical-align: top;
       display: inline-block;
       overflow: hidden;
       padding-top: 5px;
@@ -314,7 +315,7 @@ sup {
   }
 
   &.triple {
-    height: 190px;
+    height: 175px;
   }
 
   img {
