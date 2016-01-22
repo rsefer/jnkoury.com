@@ -290,6 +290,22 @@ sup {
   padding-top: 10px;
   text-align: center;
 
+  &.triple {
+
+    .denver1 & {
+      height: 180px;
+
+      a {
+        display: inline-block;
+        overflow: hidden;
+        width: 92px;
+        height: 52px;
+      }
+
+    }
+
+  }
+
   img {
     cursor: pointer;
   }
