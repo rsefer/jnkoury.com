@@ -4,15 +4,17 @@ company_name: 'John Koury, Architect'
 baseurl: ''
 imagebase: '/dist/images'
 
+source: _src
+
 # Build settings
 permalink: pretty
-
 exclude: [
   'node_modules',
   'package.json',
+  'package-lock.json',
   'gulpfile.js',
   'README.md',
-  'SOURCE'
+  'SOURCE',
+  'assets/'
 ]
-
 languages: ['en']

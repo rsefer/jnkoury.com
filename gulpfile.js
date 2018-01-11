@@ -14,8 +14,8 @@ var gulp          = require('gulp'),
     cp            = require('child_process');
 
 var paths = {
-  src: '_src/',
-  build: 'dist/',
+  src: '_src/assets/',
+  build: '_src/dist/',
   site: '_site/',
   jekyllDestinationPrefix: ''
 };
@@ -34,8 +34,7 @@ gulp.task('browser-sync', function() {
     server: {
       baseDir: paths.site
     },
-    open: false,
-    notify: false
+    open: false
   });
 });
 
@@ -43,7 +42,6 @@ gulp.task('sass', function() {
   gulp.src(paths.src + 'style/*/**.scss')
     .pipe(scsslint());
   return gulp.src(paths.src + 'style/*.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(autoprefixer({
       browsers: ['last 10 versions', 'ie 9'],
@@ -51,12 +49,8 @@ gulp.task('sass', function() {
       sync: true
     }))
     .on('error', function(error) { console.log(error.message); })
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.build + 'style'))
-    .pipe(filter('**/*.css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .pipe(gulp.dest('_src/_includes/'))
+    .pipe(browserSync.stream({ match: ['**/*.css'] }));
 });
 
 gulp.task('copy-css', ['sass'], function() {
@@ -83,7 +77,7 @@ gulp.task('images', function() {
   return gulp.src(paths.src + 'images/**/*')
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
+      svgoPlugins: [{ removeViewBox: false }],
       use: [pngquant()]
     }))
     .pipe(gulp.dest(paths.build + 'images'));
@@ -93,5 +87,5 @@ gulp.task('default', ['sass', 'js', 'images', 'jekyll-build', 'browser-sync'], f
   gulp.watch(paths.src + 'style/**/*.scss', ['copy-css']);
   gulp.watch(paths.src + 'scripts/*.js', ['js', 'jekyll-rebuild']);
   gulp.watch(paths.src + 'images/**/*', ['images']);
-  gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', 'hotels/*.html'], ['jekyll-rebuild']);
+  gulp.watch(['*', '_src/_includes/*.html', '_src/_layouts/*.html', paths.src + 'images/**/*'], ['jekyll-rebuild']);
 });
