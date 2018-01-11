@@ -10,7 +10,7 @@
   		{{ content }}
   		<div class="description">
   			<h2>{{ page.title }}{% if page.reference %}<sup>{{ page.reference }}</sup>{% endif %}</h2>
-  			<p>{{ page.description }}</p>
+  			<p>{% if page.location %}<span class="location">{{ page.location }}</span><br>{% endif %}{{ page.description }}</p>
   		</div>
   	</article>
   </section>
