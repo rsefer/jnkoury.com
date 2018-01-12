@@ -7,6 +7,14 @@
   {% include nav.html %}
   <section>
   	<article>
+			{% if page.slides %}
+			<div id="slider">
+				{% for slide in page.slides %}<div class="slider-item"><img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}"></div>{% endfor %}
+			</div>
+			<div class="thumbs thumbs-generated">
+				{% for slide in page.slides %}<a href=""><img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}" /></a>{% endfor %}
+			</div>
+			{% endif %}
   		{{ content }}
   		<div class="description">
   			<h2>{{ page.title }}{% if page.reference %}<sup>{{ page.reference }}</sup>{% endif %}</h2>

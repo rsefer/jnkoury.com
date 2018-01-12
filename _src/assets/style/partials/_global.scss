@@ -294,6 +294,24 @@ sup {
   padding-top: 10px;
   text-align: center;
 
+	&-generated {
+
+		a {
+			display: inline-block;
+			vertical-align: top;
+
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+
+		}
+
+		img {
+			width: 92px;
+		}
+
+	}
+
   &.double,
   &.triple {
 
