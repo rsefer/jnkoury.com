@@ -10,7 +10,6 @@ var gulp          = require('gulp'),
     imagemin      = require('gulp-imagemin'),
     pngquant      = require('imagemin-pngquant'),
     browserSync   = require('browser-sync'),
-    sourcemaps    = require('gulp-sourcemaps'),
     cp            = require('child_process');
 
 var paths = {
@@ -66,11 +65,9 @@ gulp.task('js', function() {
   return gulp.src([paths.src + 'scripts/vendor/**/*.js', paths.src + 'scripts/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.build + 'scripts'));
+    .pipe(gulp.dest('_src/_includes/'));
 });
 
 gulp.task('images', function() {
