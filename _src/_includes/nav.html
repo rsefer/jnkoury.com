@@ -3,45 +3,29 @@
 		<li>
 			<a id="commercial-link" title="Commercial">Commercial</a>
 			<ul id="commercial-list" class="subnav">
-				<li><a href="{{ "/steele-creek/" | prepend: site.baseurl }}" title="Steele Creek">Steele Creek</a></li>
-				<li><a href="{{ "/ncv/" | prepend: site.baseurl }}" title="North Chatham Village">North Chatham Village</a></li>
-				<li><a href="{{ "/henry-avocado/" | prepend: site.baseurl }}" title="Henry Avocado">Henry Avocado</a></li>
-				<li><a href="{{ "/abw/" | prepend: site.baseurl }}" title="ABW">ABW</a></li>
-				<li><a href="{{ "/daniele/" | prepend: site.baseurl }}" title="Daniele">Daniele</a></li>
-				<li><a href="{{ "/d1-indianapolis/" | prepend: site.baseurl }}" title="D1 Indianapolis">D1 Indianapolis</a></li>
-				<li><a href="{{ "/d1-louisville/" | prepend: site.baseurl }}" title="D1 Louisville">D1 Louisville</a></li>
-				<li><a href="{{ "/dental-surgery-center/" | prepend: site.baseurl }}" title="Dental Surgery Center">Dental Surgery Center</a></li>
-				<li><a href="{{ "/denver1/" | prepend: site.baseurl }}" title="D1 Denver">D1 Denver</a></li>
-				<li><a href="{{ "/3dsystems/" | prepend: site.baseurl }}" title="3D Systems">3D Systems</a></li>
-				<li><a href="{{ "/celgard/" | prepend: site.baseurl }}" title="Celgard">Celgard</a></li>
-				<li><a href="{{ "/microban/" | prepend: site.baseurl }}" title="Microban">Microban</a></li>
-				<li><a href="{{ "/briargateretail/" | prepend: site.baseurl }}" title="Briargate Retail">Briargate Retail</a></li>
-				<li><a href="{{ "/briargatemob/" | prepend: site.baseurl }}" title="Briargate MOB">Briargate MOB</a></li>
-				<li><a href="{{ "/aldifrederick/" | prepend: site.baseurl }}" title="Aldi Frederick">Aldi Frederick</a></li>
-				<li><a href="{{ "/aldijefferson/" | prepend: site.baseurl }}" title="Aldi Jefferson">Aldi Jefferson</a></li>
-				<li><a href="{{ "/aldiws/" | prepend: site.baseurl }}" title="Aldi Webberville and Saxonburg">Aldi Webberville and Saxonburg</a></li>
-				<li><a href="{{ "/aldiolathe/" | prepend: site.baseurl }}" title="Aldi Olathe">Aldi Olathe</a></li>
-				<li><a href="{{ "/nefoods/" | prepend: site.baseurl }}" title="Northeast Foods">Northeast Foods</a></li>
-				<li><a href="{{ "/att/" | prepend: site.baseurl }}" title="AT&amp;T Call Center">AT&amp;T Call Center</a></li>
-				<li><a href="{{ "/usb/" | prepend: site.baseurl }}" title="Union Savings Bank">Union Savings Bank</a></li>
-				<li><a href="{{ "/amking/" | prepend: site.baseurl }}" title="AM King Construction">AM King Construction</a></li>
-				<li><a href="{{ "/heritage/" | prepend: site.baseurl }}" title="Heritage House">Heritage House</a></li>
-				<li><a href="{{ "/school/" | prepend: site.baseurl }}" title="Elementary School">Elementary School</a></li>
-				<li><a href="{{ "/garmon/" | prepend: site.baseurl }}" title="Garmon">Garmon</a></li>
+				{% for page in site.pages %}
+				{% if page.commercial == true %}
+				{% assign pageTitle = page.title %}
+				{% if page.shortTitle.size > 0 %}
+				{% assign pageTitle = page.shortTitle %}
+				{% endif %}
+				<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>
+				{% endif %}
+				{% endfor %}
 			</ul>
 		</li>
 		<li>
 			<a id="residential-link" title="Residential">Residential</a>
 			<ul id="residential-list" class="subnav">
-				<li><a href="{{ "/velasquez/" | prepend: site.baseurl }}" title="Velasquez">Velasquez</a></li>
-				<li><a href="{{ "/crist/" | prepend: site.baseurl }}" title="Crist">Crist</a></li>
-				<li><a href="{{ "/spec/" | prepend: site.baseurl }}" title="Speculative Home">Speculative Home</a></li>
-				<li><a href="{{ "/hillside/" | prepend: site.baseurl }}" title="Hillside Home">Hillside Home</a></li>
-				<li><a href="{{ "/brooker/" | prepend: site.baseurl }}" title="Brooker Renovation">Brooker Renovation</a></li>
-				<li><a href="{{ "/grand/" | prepend: site.baseurl }}" title="Multi-Family">Multi-Family</a></li>
-				<li><a href="{{ "/interiors/" | prepend: site.baseurl }}" title="Interiors">Interiors</a></li>
-				<li><a href="{{ "/porch/" | prepend: site.baseurl }}" title="Back Porch">Back Porch</a></li>
-				<li><a href="{{ "/chickencoop/" | prepend: site.baseurl }}" title="Chicken Coop">Chicken Coop</a></li>
+				{% for page in site.pages %}
+				{% if page.residential == true %}
+				{% assign pageTitle = page.title %}
+				{% if page.shortTitle.size > 0 %}
+				{% assign pageTitle = page.shortTitle %}
+				{% endif %}
+				<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>
+				{% endif %}
+				{% endfor %}
 			</ul>
 		</li>
 		<li><a href="{{ "/ontheboards/" | prepend: site.baseurl }}" title="On The Boards">On The Boards</a></li>
