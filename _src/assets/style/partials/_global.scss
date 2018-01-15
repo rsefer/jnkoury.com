@@ -1,13 +1,18 @@
-*,
-html {
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0px;
   padding: 0px;
+  font-size: 16px;
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: lighter;
 }
 
 body {
   background: $white-light;
-  font-family: "nimbus-sans", sans-serif;
-  font-weight: lighter;
 }
 
 a img {
@@ -15,20 +20,27 @@ a img {
   border-style: none;
 }
 
-#wrapper {
-  width: 900px;
-  margin: 40px auto;
+.wrapper {
+
+  margin: 1rem 0px;
+  padding: 0px 1rem;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint) {
+    margin: 40px auto;
+    width: $breakpoint;
+  }
+
 }
 
 header {
 
-  margin-left: 100px;
-  margin-bottom: 50px;
+  text-align: center;
 
   h1 {
 
     margin: 0px;
-    font-size: 65px;
+    font-size: 42px;
     letter-spacing: 2px;
     font-weight: normal;
 
@@ -46,8 +58,6 @@ header {
 
   h2 {
 
-    margin-top: -3px;
-    margin-left: 40px;
     font-size: 16px;
     font-weight: normal;
 
@@ -58,19 +68,40 @@ header {
 
   }
 
+  @media screen and (min-width: $breakpoint) {
+
+    margin-left: 100px;
+    margin-bottom: 50px;
+    text-align: left;
+
+    h1 {
+      font-size: 65px;
+    }
+
+    h2 {
+      margin-top: -3px;
+      margin-left: 40px;
+    }
+
+  }
+
 }
 
 nav {
 
-  float: left;
-  width: 149px;
-  height: 400px;
-  margin-bottom: 50px;
-  padding-top: 50px;
-  padding-right: 30px;
-  font-size: 20px;
-  line-height: 26px;
-  text-align: right;
+  display: none;
+
+	@media screen and (min-width: $breakpoint) {
+    display: block;
+		float: left;
+	  width: 149px;
+	  height: 400px;
+	  margin-bottom: 50px;
+	  padding-top: 50px;
+	  font-size: 20px;
+	  line-height: 26px;
+	  text-align: right;
+	}
 
   ul {
 
@@ -135,10 +166,14 @@ nav {
 }
 
 section {
-  margin-left: 179px;
-  padding-left: 30px;
-  border-left: 1px solid $gray-light;
-  min-height: 450px;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-left: 179px;
+    padding-left: 30px;
+    border-left: 1px solid $gray-light;
+    min-height: 450px;
+  }
+
 }
 
 article {
@@ -180,10 +215,6 @@ article {
     margin-bottom: 10px;
   }
 
-  &#home p {
-    text-align: justify;
-  }
-
   &#contact {
     font-size: 32px;
     line-height: 38px;
@@ -193,7 +224,7 @@ article {
     text-align: right;
   }
 
-  &#home .quote {
+  &.home .quote {
 
     font-size: 1.125em;
 
@@ -203,7 +234,7 @@ article {
 
   }
 
-  #home-img {
+  .home-img {
     float: right;
     width: 330px;
     margin-left: 30px;
@@ -290,14 +321,13 @@ article {
 
 	}
 
-  @media screen and (min-width: $mobile-breakpoint) {
+  @media screen and (min-width: $breakpoint) {
 
 		.article-description,
 		.article-image-wrap {
 			display: inline-block;
 			vertical-align: top;
 			width: 50%;
-      box-sizing: border-box;
 		}
 
     .article-image-wrap {
@@ -402,27 +432,47 @@ sup {
   margin-bottom: 30px;
 }
 
-#home .quote-block {
+.home .quote-block {
   margin-top: 20px;
 }
 
 .open-quote,
 .close-quote {
+
   z-index: 0;
   position: absolute;
   color: $white;
-  font-family: "Times New Roman", serif;
-  font-size: 72px;
+  font-family: 'Times New Roman', serif;
+  font-size: 48px;
+
+	@media screen and (min-width: $breakpoint) {
+		font-size: 72px;
+	}
+
 }
 
 .open-quote {
-  top: 28px;
-  left: -24px;
+
+  top: 18px;
+  left: -12px;
+
+  @media screen and (min-width: $breakpoint) {
+    top: 28px;
+    left: -24px;
+  }
+
 }
 
 .close-quote {
-  bottom: 15px;
-  right: 0px;
+
+  display: none;
+
+  @media screen and (min-width: $breakpoint) {
+    display: block;
+    bottom: 15px;
+    right: 0px;
+  }
+
 }
 
 .quote {
@@ -431,8 +481,12 @@ sup {
   padding: 15px;
 }
 
-#home .quote {
-  padding: 15px 100px;
+.home .quote {
+
+  @media screen and (min-width: $breakpoint) {
+    padding: 15px 100px;
+  }
+
 }
 
 .attribution {
