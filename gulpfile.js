@@ -38,8 +38,8 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('sass', function() {
-  gulp.src(paths.src + 'style/*/**.scss')
-    .pipe(scsslint());
+  //gulp.src(paths.src + 'style/*/**.scss')
+    //.pipe(scsslint());
   return gulp.src(paths.src + 'style/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(autoprefixer({

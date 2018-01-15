@@ -1,40 +1,23 @@
 jQuery(document).ready(function($) {
-  $('#residential-link').click(function() {
-  	if ($('#residential-list').hasClass('open')) {
-  		$('#residential-list').removeClass('open');
-  		$('#residential-list').slideUp();
-  	} else {
-  		if ($('#commercial-list').hasClass('open')) {
-  			$('#commercial-list').removeClass('open');
-  			$('#commercial-list').slideUp();
-  		}
 
-  		$('#residential-list').addClass('open');
-  		$('#residential-list').slideDown();
-  	}
-  });
-  $('#commercial-link').click(function() {
-  	if ($('#commercial-list').hasClass('open')) {
-  		$('#commercial-list').removeClass('open');
-  		$('#commercial-list').slideUp();
-  	} else {
-  		if ($('#residential-list').hasClass('open')) {
-  			$('#residential-list').removeClass('open');
-  			$('#residential-list').slideUp();
-  		}
-
-  		$('#commercial-list').addClass('open');
-  		$('#commercial-list').slideDown();
-  	}
-  });
+	$('.nav-parent-link').click(function() {
+		var thisSubnav = $(this).parent().find('.subnav');
+		if (thisSubnav.hasClass('open')) {
+      thisSubnav.slideUp();
+			thisSubnav.removeClass('open');
+		} else {
+			$('.subnav').slideUp();
+			thisSubnav.slideDown().addClass('open');
+		}
+	});
 
   var slider = $('#slider').bxSlider({
     controls: false,
     speed: 400
   });
 
-  $('.thumbs a').click(function(){
-   var thumbIndex = $('.thumbs a').index(this);
+  $('.thumbs a').click(function() {
+    var thumbIndex = $('.thumbs a').index(this);
     slider.goToSlide(thumbIndex);
     $('.thumbs a').removeClass('pager-active');
     $(this).addClass('pager-active');
@@ -42,4 +25,5 @@ jQuery(document).ready(function($) {
   });
 
   $('.thumbs a:first').addClass('pager-active');
+
 });

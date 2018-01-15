@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body class="article{% if page.bodyClasses %} {{ page.bodyClasses }}{% endif %}">
+<div id="wrapper">
+  {% include header.html %}
+  {% include nav.html %}
+  <section>
+  	<article>
+  		{{ content }}
+  		<div class="description">
+  			<h2>{{ page.title }}</h2>
+        {% if page.articleExternalLink %}<p class="article-external-link"><a href="{{ page.articleExternalLink }}" target="_blank">{{ page.articleExternalLink }}</a></p>{% endif %}
+  			{% if page.date %}<p class="date">{{ page.date }}</p>{% endif %}
+        <div class="article-content">
+          {% if page.description %}<div class="article-description">{{ page.description }}</div>{% endif %}<a href="{{ page.articleInternalLink }}" class="article-image-wrap" target="_blank"><img src="{{ page.articleImage }}"></a>
+        </div>
+  		</div>
+  	</article>
+  </section>
+  {% include footer.html %}
+</div>
+{% include scripts.html %}
+</body>
+</html>

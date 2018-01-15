@@ -98,12 +98,19 @@ nav {
 
       }
 
+      &#articles-list {
+
+        .article & {
+          display: block;
+        }
+
+      }
+
     }
 
   }
 
-  #residential-link,
-  #commercial-link {
+  .nav-parent-link {
     cursor: pointer;
   }
 
@@ -256,6 +263,48 @@ article {
     font-weight: normal;
     margin-bottom: 5px;
   }
+
+	.article-external-link {
+		margin-bottom: 5px;
+	}
+
+}
+
+.article-content {
+
+	text-align: center;
+
+  .article-description {
+    padding-right: 5%;
+		text-align: left;
+  }
+
+	.article-image-wrap {
+
+    display: block;
+    margin-top: 20px;
+
+		img {
+			width: 100%;
+		}
+
+	}
+
+  @media screen and (min-width: $mobile-breakpoint) {
+
+		.article-description,
+		.article-image-wrap {
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+      box-sizing: border-box;
+		}
+
+    .article-image-wrap {
+      margin-top: 0px;
+    }
+
+	}
 
 }
 
