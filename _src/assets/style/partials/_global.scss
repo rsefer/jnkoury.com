@@ -178,9 +178,12 @@ section {
 
 article {
 
-  max-width: 690px;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.25;
+
+  @media screen and (min-width: $breakpoint) {
+    max-width: 690px;
+  }
 
   p {
 
@@ -347,8 +350,11 @@ sup {
 .slider-item {
 
   position: relative;
-  width: 690px;
-  height: 388px;
+
+	@media screen and (min-width: $breakpoint) {
+		width: 690px;
+	  height: 388px;
+	}
 
   &.light {
     background: $black;
@@ -367,11 +373,55 @@ sup {
 
 }
 
+.bx-wrapper {
+
+	position: relative;
+
+  img {
+    width: 100%;
+  }
+
+	.bx-controls {
+
+		a {
+
+			position: absolute;
+			top: 50%;
+      transform: translate(0px, -50%);
+			color: $white;
+			text-shadow: 0px 0px 0.25em transparentize($black, 0.75);
+      text-decoration: none;
+      font-size: 1.5rem;
+      line-height: 1;
+
+			&.bx-prev {
+				left: 0.25em;
+			}
+
+			&.bx-next {
+				right: 0.25em;
+			}
+
+      @media screen and (min-width: $breakpoint) {
+        display: none;
+      }
+
+		}
+
+	}
+
+}
+
 .thumbs {
 
-  height: 52px;
-  padding-top: 10px;
-  text-align: center;
+  display: none;
+
+  @media screen and (min-width: $breakpoint) {
+    display: block;
+    height: 52px;
+    padding-top: 10px;
+    text-align: center;
+  }
 
 	&-generated {
 

@@ -12,18 +12,29 @@ jQuery(document).ready(function($) {
 	});
 
   var slider = $('#slider').bxSlider({
-    controls: false,
-    speed: 400
+    controls: true,
+    pager: false,
+    speed: 400,
+    prevText: '&lt;',
+    nextText: '&gt;',
+    onSliderLoad: function(currentIndex) {
+      activateThumb(currentIndex);
+    },
+    onSlideAfter: function($slideElement, oldIndex, newIndex) {
+      activateThumb(newIndex);
+  	}
   });
 
   $('.thumbs a').click(function() {
     var thumbIndex = $('.thumbs a').index(this);
     slider.goToSlide(thumbIndex);
-    $('.thumbs a').removeClass('pager-active');
-    $(this).addClass('pager-active');
+    activateThumb($('.thumbs a').index($(this)));
     return false;
   });
 
-  $('.thumbs a:first').addClass('pager-active');
-
 });
+
+function activateThumb(index) {
+  $('.thumbs a').removeClass('pager-active');
+  $('.thumbs a').eq(index).addClass('pager-active');
+}
