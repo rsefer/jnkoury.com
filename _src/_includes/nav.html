@@ -1,46 +1,17 @@
 <nav>
-	<ul>
+	<div class="nav-toggle">Menu</div>
+	<ul class="main-menu">
 		<li>
 			<a id="commercial-link" class="nav-parent-link" title="Commercial">Commercial</a>
-			<ul id="commercial-list" class="subnav{% if page and page.commercial == true %} open{% endif %}">
-				{% for page in site.pages %}
-				{% if page.commercial == true %}
-				{% assign pageTitle = page.title %}
-				{% if page.shortTitle.size > 0 %}
-				{% assign pageTitle = page.shortTitle %}
-				{% endif %}
-				<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>
-				{% endif %}
-				{% endfor %}
-			</ul>
+			<ul id="commercial-list" class="subnav{% if page and page.commercial == true %} open{% endif %}">{% for page in site.pages %}{% if page.commercial == true %}{% assign pageTitle = page.title %}{% if page.shortTitle.size > 0 %}{% assign pageTitle = page.shortTitle %}{% endif %}<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>{% endif %}{% endfor %}</ul>
 		</li>
 		<li>
 			<a id="residential-link" class="nav-parent-link" title="Residential">Residential</a>
-			<ul id="residential-list" class="subnav{% if page and page.residential == true %} open{% endif %}">
-				{% for page in site.pages %}
-				{% if page.residential == true %}
-				{% assign pageTitle = page.title %}
-				{% if page.shortTitle.size > 0 %}
-				{% assign pageTitle = page.shortTitle %}
-				{% endif %}
-				<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>
-				{% endif %}
-				{% endfor %}
-			</ul>
+			<ul id="residential-list" class="subnav{% if page and page.residential == true %} open{% endif %}">{% for page in site.pages %}{% if page.residential == true %}{% assign pageTitle = page.title %}{% if page.shortTitle.size > 0 %}{% assign pageTitle = page.shortTitle %}{% endif %}<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>{% endif %}{% endfor %}</ul>
 		</li>
 		<li>
 			<a id="articles-link" class="nav-parent-link" title="Articles">Articles</a>
-			<ul id="articles-list" class="subnav{% if page and page.article == true %} open{% endif %}">
-				{% for page in site.pages %}
-				{% if page.article == true %}
-				{% assign pageTitle = page.title %}
-				{% if page.shortTitle.size > 0 %}
-				{% assign pageTitle = page.shortTitle %}
-				{% endif %}
-				<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>
-				{% endif %}
-				{% endfor %}
-			</ul>
+			<ul id="articles-list" class="subnav{% if page and page.article == true %} open{% endif %}">{% for page in site.pages %}{% if page.article == true %}{% assign pageTitle = page.title %}{% if page.shortTitle.size > 0 %}{% assign pageTitle = page.shortTitle %}{% endif %}<li><a href="{{ page.url }}" title="{{ pageTitle }}">{{ pageTitle }}</a></li>{% endif %}{% endfor %}</ul>
 		</li>
 		<li><a href="{{ "/ontheboards/" | prepend: site.baseurl }}" title="On The Boards">On The Boards</a></li>
 		<li><a href="{{ "/about/" | prepend: site.baseurl }}" title="About">About</a></li>

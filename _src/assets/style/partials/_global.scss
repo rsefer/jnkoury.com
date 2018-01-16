@@ -15,6 +15,10 @@ body {
   background: $white-light;
 }
 
+img {
+	max-width: 100%;
+}
+
 a img {
   border: 0px;
   border-style: none;
@@ -87,25 +91,68 @@ header {
 
 }
 
-nav {
-
-  display: none;
+nav,
+section {
 
 	@media screen and (min-width: $breakpoint) {
-    display: block;
-		float: left;
-	  width: 149px;
-	  height: 400px;
-	  margin-bottom: 50px;
-	  padding-top: 50px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+}
+
+nav {
+
+  text-align: center;
+
+  .main-menu {
+    display: none;
+  }
+
+	@media screen and (min-width: $breakpoint) {
+
+    padding-top: 50px;
+    padding-right: 30px;
+    margin-bottom: 50px;
+	  width: 179px;
 	  font-size: 20px;
 	  line-height: 26px;
 	  text-align: right;
+
+    .main-menu {
+      display: block;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
 	}
+
+
+
+  .nav-toggle {
+
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+
+    &:before {
+      content: '+';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.125em;
+      //width: 1em;
+    }
+
+  }
 
   ul {
 
     list-style-type: none;
+    padding-left: 0px;
 
     ul {
 
@@ -168,7 +215,6 @@ nav {
 section {
 
   @media screen and (min-width: $breakpoint) {
-    margin-left: 179px;
     padding-left: 30px;
     border-left: 1px solid $gray-light;
     min-height: 450px;
@@ -218,12 +264,7 @@ article {
     margin-bottom: 10px;
   }
 
-  &#contact {
-    font-size: 32px;
-    line-height: 38px;
-  }
-
-  &#references p {
+  &.references p {
     text-align: right;
   }
 
@@ -244,13 +285,21 @@ article {
     margin-bottom: 16px;
   }
 
-  &#about {
+  &.about {
 
     #head-shot {
-      float: left;
-      margin-right: 30px;
+
+			display: block;
+			margin: 0px auto;
       box-shadow: 0px 3px 15px 3px transparentize($black, 0.85);
+
+			@media screen and (min-width: $breakpoint) {
+				float: left;
+	      margin-right: 30px;
+			}
+
     }
+
 
     ul {
       list-style-type: none;
@@ -263,28 +312,29 @@ article {
 
   }
 
-  &#ontheboards {
+  &.ontheboards {
 
     .clear {
       clear: both;
     }
 
     img {
-      margin-bottom: 1em;
+      display: block;
+      margin: 0px auto 1rem;
     }
 
-    #true-north-draw {
-      max-width: 690px;
-    }
+    @media screen and (min-width: $breakpoint) {
 
-    #true-north-existing {
-      float: right;
-      width: 450px;
-    }
+      #true-north-existing {
+        float: right;
+        width: 450px;
+      }
 
-    #warehouse-plan {
-      float: left;
-      height: 337px;
+      #warehouse-plan {
+        float: left;
+        height: 337px;
+      }
+
     }
 
   }
@@ -300,6 +350,7 @@ article {
 
 	.article-external-link {
 		margin-bottom: 5px;
+    word-wrap: break-word;
 	}
 
 }
@@ -494,6 +545,7 @@ sup {
   color: $white;
   font-family: 'Times New Roman', serif;
   font-size: 48px;
+	line-height: 1;
 
 	@media screen and (min-width: $breakpoint) {
 		font-size: 72px;
@@ -503,11 +555,11 @@ sup {
 
 .open-quote {
 
-  top: 18px;
+  top: 0px;
   left: -12px;
 
   @media screen and (min-width: $breakpoint) {
-    top: 28px;
+    top: -10px;
     left: -24px;
   }
 
@@ -519,7 +571,7 @@ sup {
 
   @media screen and (min-width: $breakpoint) {
     display: block;
-    bottom: 15px;
+    bottom: -10px;
     right: 0px;
   }
 
@@ -543,16 +595,12 @@ sup {
   text-align: right;
 }
 
-#work-grid {
+.work-grid {
 
   text-align: center;
 
   a:hover {
     opacity: 0.5;
-  }
-
-  #row1 {
-    margin-bottom: 10px;
   }
 
   img {
@@ -561,14 +609,38 @@ sup {
 
 }
 
-footer {
+.contact-block {
 
-  margin-left: 210px;
-  margin-top: 20px;
-  clear: both;
   text-align: center;
 
-  a {
+  & > div {
+    margin: 0.5rem 0px;
+  }
+
+	@media screen and (min-width: $breakpoint) {
+
+		& > div {
+
+			display: inline-block;
+      vertical-align: top;
+
+      &:not(:first-child) {
+
+        margin-left: 2rem;
+        padding-left: 2rem;
+
+        &:before {
+          content: '|';
+          padding-right: 2rem;
+        }
+
+      }
+
+		}
+
+	}
+
+	a {
 
     &,
     &:visited {
@@ -577,14 +649,4 @@ footer {
 
   }
 
-  .spacer {
-    float: left;
-    width: 100px;
-    height: 5px;
-  }
-
-}
-
-#foot-top {
-  text-align: center;
 }

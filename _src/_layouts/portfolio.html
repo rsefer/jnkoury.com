@@ -4,8 +4,7 @@
 <body class="portfolio{% if page.commercial %} commercial{% endif %}{% if page.residential %} residential{% endif %}{% if page.bodyClasses %} {{ page.bodyClasses }}{% endif %}">
 <div class="wrapper">
   {% include header.html %}
-  {% include nav.html %}
-  <section>
+  {% include nav.html %}<section>
   	<article>
 			{% if page.slides %}
 			<div id="slider">
@@ -21,8 +20,8 @@
   			<p>{% if page.location %}<span class="location">{{ page.location }}</span><br>{% endif %}{{ page.description }}</p>
   		</div>
   	</article>
+		{% include footer.html %}
   </section>
-  {% include footer.html %}
 </div>
 {% include scripts.html %}
 </body>

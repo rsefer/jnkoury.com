@@ -11,6 +11,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	$('.nav-toggle').click(function() {
+		$(this).toggleClass('active');
+		$('.main-menu').toggle();
+	});
+
   var slider = $('#slider').bxSlider({
     controls: true,
     pager: false,

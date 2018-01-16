@@ -4,9 +4,7 @@
 <body{% if page.bodyClasses %} class="{{ page.bodyClasses }}"{% endif %}>
 <div class="wrapper">
   {% include header.html %}
-  {% include nav.html %}
-  {{ content }}
-  {% include footer.html %}
+  {% include nav.html %}{{ content }}
 </div>
 {% include scripts.html %}
 </body>
