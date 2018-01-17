@@ -4,6 +4,45 @@ company_name: 'John Koury, Architect'
 baseurl: ''
 imagebase: '/dist/images'
 
+collections_dir: collections
+collections:
+  industrial:
+    name: 'Industrial'
+    output: true
+    order: 0
+  warehouse:
+    name: 'Warehouse'
+    output: true
+    order: 1
+  food:
+    name: 'Food'
+    output: true
+    order: 2
+  coldstorage:
+    name: 'Cold Storage'
+    output: true
+    order: 3
+  medicaloffice:
+    name: 'Medical Office'
+    output: true
+    order: 4
+  office:
+    name: 'Office'
+    output: true
+    order: 5
+  athletic:
+    name: 'Athletic'
+    output: true
+    order: 6
+  residential:
+    name: 'Residential'
+    output: true
+    order: 7
+  articles:
+    name: 'Articles'
+    output: true
+    order: 8
+
 source: _src
 
 # Build settings

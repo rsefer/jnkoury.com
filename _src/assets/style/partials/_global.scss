@@ -160,29 +160,9 @@ nav {
       font-size: 16px;
       line-height: 22px;
 
-      &#residential-list {
-
-        .residential & {
-          display: block;
-        }
-
-      }
-
-      &#commercial-list {
-
-        .commercial & {
-          display: block;
-        }
-
-      }
-
-      &#articles-list {
-
-        .article & {
-          display: block;
-        }
-
-      }
+			&.open {
+				display: block;
+			}
 
     }
 

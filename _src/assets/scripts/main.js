@@ -3,11 +3,11 @@ jQuery(document).ready(function($) {
 	$('.nav-parent-link').click(function() {
 		var thisSubnav = $(this).parent().find('.subnav');
 		if (thisSubnav.hasClass('open')) {
-      thisSubnav.slideUp();
+      thisSubnav.hide();
 			thisSubnav.removeClass('open');
 		} else {
-			$('.subnav').slideUp();
-			thisSubnav.slideDown().addClass('open');
+			$('.subnav').hide();
+			thisSubnav.show().addClass('open');
 		}
 	});
 
