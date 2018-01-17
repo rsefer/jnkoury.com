@@ -6,42 +6,38 @@ imagebase: '/dist/images'
 
 collections_dir: collections
 collections:
-  industrial:
-    name: 'Industrial'
+  industrialrandd:
+    name: 'Industrial and R&amp;D'
     output: true
     order: 0
-  warehouse:
-    name: 'Warehouse'
-    output: true
-    order: 1
-  food:
-    name: 'Food'
-    output: true
-    order: 2
-  coldstorage:
+  coldstoragedistribution:
     name: 'Cold Storage'
     output: true
-    order: 3
+    order: 1
+  foodprocess:
+    name: 'Food Process'
+    output: true
+    order: 2
   medicaloffice:
     name: 'Medical Office'
     output: true
-    order: 4
+    order: 3
   office:
     name: 'Office'
     output: true
-    order: 5
+    order: 4
   athletic:
     name: 'Athletic'
     output: true
-    order: 6
+    order: 5
   residential:
     name: 'Residential'
     output: true
-    order: 7
+    order: 6
   articles:
     name: 'Articles'
     output: true
-    order: 8
+    order: 7
 
 source: _src
 
