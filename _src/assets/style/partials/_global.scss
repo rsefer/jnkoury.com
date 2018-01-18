@@ -180,9 +180,14 @@ nav {
   }
 
   .nav-parent-link {
+
     display: block;
     cursor: pointer;
-    line-height: 0.9;
+
+		@media screen and (min-width: $breakpoint) {
+			line-height: 0.9;
+		}
+
   }
 
   a {
