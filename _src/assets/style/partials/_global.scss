@@ -111,9 +111,7 @@ nav {
 
 	@media screen and (min-width: $breakpoint) {
 
-    padding-top: 50px;
-    padding-right: 30px;
-    margin-bottom: 50px;
+    padding: 50px 30px 50px 0px;
 	  width: 179px;
 	  font-size: 20px;
 	  line-height: 26px;
@@ -200,7 +198,7 @@ section {
   @media screen and (min-width: $breakpoint) {
     padding-left: 30px;
     border-left: 1px solid $gray-light;
-    min-height: 450px;
+    min-height: 500px;
   }
 
 }
