@@ -7,7 +7,7 @@ imagebase: '/dist/images'
 collections_dir: collections
 collections:
   industrialrandd:
-    name: 'Industrial/ Research and Development'
+    name: 'Industrial/R&amp;D'
     output: true
     order: 0
   coldstoragedistribution:
