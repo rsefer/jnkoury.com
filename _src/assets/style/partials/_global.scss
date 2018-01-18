@@ -479,7 +479,13 @@ sup {
 		}
 
 		img {
+
 			width: 92px;
+
+			.denver1 & {
+				height: 62px;
+			}
+
 		}
 
 	}
