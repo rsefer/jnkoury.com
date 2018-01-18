@@ -18,16 +18,16 @@ collections:
     name: 'Food Process'
     output: true
     order: 2
-  medicaloffice:
-    name: 'Medical Office'
+  medicalofficeathletic:
+    name: 'Medical Office/Athletic'
     output: true
     order: 3
   office:
     name: 'Office'
     output: true
     order: 4
-  athletic:
-    name: 'Athletic'
+  education:
+    name: 'Education'
     output: true
     order: 5
   residential:
