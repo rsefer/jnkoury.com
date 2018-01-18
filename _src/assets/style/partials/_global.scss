@@ -327,9 +327,13 @@ article {
   }
 
   h2 {
+    margin: 0px;
     font-weight: normal;
-    margin-bottom: 5px;
   }
+
+	.location {
+		font-weight: normal;
+	}
 
 	.article-external-link {
 		margin-bottom: 5px;
@@ -450,10 +454,15 @@ sup {
 
   display: none;
 
+	&:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+
   @media screen and (min-width: $breakpoint) {
     display: block;
-    height: 52px;
-    padding-top: 10px;
+    padding-top: 0.625rem;
     text-align: center;
   }
 
@@ -491,14 +500,6 @@ sup {
 
   }
 
-  &.double {
-    height: 115px;
-  }
-
-  &.triple {
-    height: 175px;
-  }
-
   img {
     cursor: pointer;
   }
@@ -506,7 +507,6 @@ sup {
   .pager-active img {
     box-shadow: $box-shadow;
     opacity: 0.5;
-    filter: alpha(opacity = 50);
   }
 
 }

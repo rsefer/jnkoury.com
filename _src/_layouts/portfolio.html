@@ -17,7 +17,8 @@
   		{{ content }}
   		<div class="description">
   			<h2>{{ page.title }}{% if page.reference %}<sup>{{ page.reference }}</sup>{% endif %}</h2>
-  			<p>{% if page.location %}<span class="location">{{ page.location }}</span><br>{% endif %}{{ page.description }}</p>
+				{% if page.location %}<p class="location">{{ page.location }}</p>{% endif %}
+  			<p>{{ page.description }}</p>
   		</div>
   	</article>
 		{% include footer.html %}
