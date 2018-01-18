@@ -1,11 +1,11 @@
 <nav>
 	<div class="nav-toggle">Menu</div>
 	<ul class="main-menu">
-		{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 %}
+		{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 %}{% assign items = site.[collectionSlug] % | sort: 'order' %}
 		<li data-collection="{{ collectionSlug }}">
 			<a class="nav-parent-link" title="{{ collection.name }}">{{ collection.name }}</a>
 			<ul class="subnav{% if page and page.collection == collectionSlug %} open{% endif %}">
-			{% for item in site.[collectionSlug] %}{% assign itemTitle = item.title %}{% if item.shortTitle.size > 0 %}{% assign itemTitle = item.shortTitle %}{% endif %}<li><a href="{{ item.url }}" title="{{ itemTitle }}">{{ itemTitle }}</a></li>{% endfor %}
+			{% for item in items %}{% assign itemTitle = item.title %}{% if item.shortTitle.size > 0 %}{% assign itemTitle = item.shortTitle %}{% endif %}<li><a href="{{ item.url }}" title="{{ itemTitle }}">{{ itemTitle }}</a></li>{% endfor %}
 			</ul>
 		</li>
 		{% endif %}{% endfor %}
