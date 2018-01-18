@@ -118,7 +118,18 @@ nav {
 	  text-align: right;
 
     .main-menu {
+
       display: block;
+
+			& > li {
+
+        &:not(:last-child) {
+  				margin-bottom: 0.375rem;
+  			}
+
+      }
+
+
     }
 
     .nav-toggle {
@@ -169,7 +180,9 @@ nav {
   }
 
   .nav-parent-link {
+    display: block;
     cursor: pointer;
+    line-height: 1.1;
   }
 
   a {
