@@ -39,8 +39,6 @@ collections:
     output: true
     order: 7
 
-source: _src
-
 # Build settings
 permalink: pretty
 exclude: [
