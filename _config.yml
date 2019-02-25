@@ -18,26 +18,30 @@ collections:
     name: 'Food Process'
     output: true
     order: 2
+  commercial:
+    name: 'Commercial'
+    output: true
+    order: 3
   medicalofficeathletic:
     name: 'Medical Office/Athletic'
     output: true
-    order: 3
+    order: 4
   office:
     name: 'Office'
     output: true
-    order: 4
+    order: 5
   education:
     name: 'Education'
     output: true
-    order: 5
+    order: 6
   residential:
     name: 'Residential'
     output: true
-    order: 6
+    order: 7
   articles:
     name: 'Articles'
     output: true
-    order: 7
+    order: 8
 
 # Build settings
 permalink: pretty
