@@ -8,10 +8,24 @@
   	<article>
 			{% if page.slides %}
 			<div id="slider">
-				{% for slide in page.slides %}<div class="slider-item"><img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}"></div>{% endfor %}
+				{% for slide in page.slides %}<div class="slider-item">
+					{% if slide contains '.mp4' %}
+					<video width="100%" controls{% if page.video_slug %} poster="{{ site.imagebase }}/slides/{{ page.slug }}/{{ page.video_slug }}"{% endif %}>
+						<source src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}" type="video/mp4">
+					</video>
+					{% else %}
+					<img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}">
+					{% endif %}
+				</div>{% endfor %}
 			</div>
 			<div class="thumbs thumbs-generated">
-				{% for slide in page.slides %}<a href=""><img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}" /></a>{% endfor %}
+				{% for slide in page.slides %}<a href="">
+					{% if slide contains '.mp4' %}
+					<img src="{{ site.imagebase }}/play.png" />
+					{% else %}
+					<img src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}" />
+					{% endif %}
+				</a>{% endfor %}
 			</div>
 			{% endif %}
   		{{ content }}
