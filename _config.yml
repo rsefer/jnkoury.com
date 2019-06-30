@@ -40,7 +40,7 @@ collections:
     order: 7
   articles:
     name: 'Articles'
-    output: true
+    output: false
     order: 8
 
 # Build settings

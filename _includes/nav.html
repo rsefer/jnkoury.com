@@ -1,7 +1,7 @@
 <nav>
 	<div class="nav-toggle">Menu</div>
 	<ul class="main-menu">
-		{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 %}{% assign items = site.[collectionSlug] % | sort: 'order' %}
+		{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSlug != 'articles' and collectionSize > 0 %}{% assign items = site.[collectionSlug] % | sort: 'order' %}
 		<li data-collection="{{ collectionSlug }}">
 			<a class="nav-parent-link" title="{{ collection.name }}">{{ collection.name }}</a>
 			<ul class="subnav{% if page and page.collection == collectionSlug %} open{% endif %}">
@@ -9,7 +9,7 @@
 			</ul>
 		</li>
 		{% endif %}{% endfor %}
-		<li><a href="{{ "/ontheboards/" | prepend: site.baseurl }}" title="On The Boards">On The Boards</a></li>
+		<li><a href="{{ "/articles/" | prepend: site.baseurl }}" title="Articles">Articles</a></li>
 		<li><a href="{{ "/about/" | prepend: site.baseurl }}" title="About">About</a></li>
 		<li><a href="{{ "/references/" | prepend: site.baseurl }}" title="References">References</a></li>
 	</ul>

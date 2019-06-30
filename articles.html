@@ -1,0 +1,21 @@
+---
+layout: default
+title: 'Articles'
+bodyClasses: articles
+---
+
+<section>
+	<article class="articles">
+		{% for article in site.articles %}
+		<div class="article">
+			<h2>
+				{% if article.articleExternalLink %}<a href="{{ article.articleExternalLink }}" target="_blank">{% elsif article.articleInternalLink %}<a href="{{ article.articleInternalLink }}"></a>{% endif %}
+				{{ article.title }}
+				{% if article.articleExternalLink or article.articleExternalLink %}</a>{% endif %}
+			</h2>
+			{% if article.publishDate %}<h3>{{ article.publishDate }}</h3>{% endif %}
+		</div>
+		{% endfor %}
+		{% include footer.html %}
+	</article>
+</section>
