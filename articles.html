@@ -6,7 +6,7 @@ bodyClasses: articles
 
 <section>
 	<article class="articles">
-		{% for article in site.articles %}
+		{% assign articles = site.articles | sort: 'date' %}{% for article in articles reversed %}
 		<div class="article">
 			<h2>
 				{% if article.articleExternalLink %}<a href="{{ article.articleExternalLink }}" target="_blank">{% elsif article.articleInternalLink %}<a href="{{ article.articleInternalLink }}"></a>{% endif %}
