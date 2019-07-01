@@ -30,13 +30,13 @@
 			{% endif %}
   		{{ content }}
   		<div class="description">
-  			<h2>{{ page.title }}{% if page.reference %}<sup>{{ page.reference }}</sup>{% endif %}</h2>
+  			<h2>{{ page.title }}</h2>
 				{% if page.location %}<p class="location">{{ page.location }}</p>{% endif %}
   			<p>{{ page.description }}</p>
   		</div>
   	</article>
-		{% include footer.html %}
-  </section>
+	</section>
+	{% include footer.html %}
 </div>
 {% include scripts.html %}
 </body>
