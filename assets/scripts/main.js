@@ -1,16 +1,16 @@
 jQuery(document).ready(function($) {
 
-	$('.nav-parent-link').click(function(e) {
-    e.preventDefault();
-		var thisSubnav = $(this).parent().find('.subnav')[0];
-		if ($(thisSubnav).hasClass('open')) {
-			$(thisSubnav).removeClass('open');
-		} else {
-      $('.subnav').removeClass('open').attr('style', '');
-			$(thisSubnav).show().addClass('open');
-		}
-    $(thisSubnav).attr('style', '');
-	});
+	// $('.nav-parent-link').click(function(e) {
+  //   e.preventDefault();
+	// 	var thisSubnav = $(this).parent().find('.subnav')[0];
+	// 	if ($(thisSubnav).hasClass('open')) {
+	// 		$(thisSubnav).removeClass('open');
+	// 	} else {
+  //     $('.subnav').removeClass('open').attr('style', '');
+	// 		$(thisSubnav).show().addClass('open');
+	// 	}
+  //   $(thisSubnav).attr('style', '');
+	// });
 
 	$('.nav-toggle').click(function() {
 		$(this).toggleClass('active');

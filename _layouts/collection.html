@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body class="article{% if page.bodyClasses %} {{ page.bodyClasses }}{% endif %}">
+<div class="wrapper">
+  {% include header.html %}
+  {% include nav.html %}<section>
+  	<article>
+			<div class="grid">
+				{{ content }}
+			</div>
+  	</article>
+	</section>
+	{% include footer.html %}
+</div>
+{% include scripts.html %}
+</body>
+</html>

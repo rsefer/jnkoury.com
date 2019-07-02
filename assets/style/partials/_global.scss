@@ -618,6 +618,29 @@ sup {
 
 }
 
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&-item {
+
+		margin-top: 2rem;
+
+		@media screen and (min-width: $breakpoint) {
+
+			flex-basis: 47.5%;
+			margin-top: 0px;
+
+			&:nth-child(n+3) {
+				margin-top: 2.5%;
+			}
+
+		}
+
+	}
+}
+
 .work-grid {
 
   text-align: center;
