@@ -619,6 +619,7 @@ sup {
 }
 
 .grid {
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -626,6 +627,7 @@ sup {
 	&-item {
 
 		margin-top: 2rem;
+		text-decoration: none;
 
 		@media screen and (min-width: $breakpoint) {
 
@@ -639,6 +641,11 @@ sup {
 		}
 
 	}
+
+	.item-title {
+		font-weight: 400;
+	}
+
 }
 
 .work-grid {
