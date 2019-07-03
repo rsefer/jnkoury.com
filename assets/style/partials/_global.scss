@@ -74,17 +74,17 @@ header {
 
   @media screen and (min-width: $breakpoint) {
 
-    margin-left: 100px;
-    margin-bottom: 50px;
-    text-align: left;
+    // margin-left: 100px;
+    // margin-bottom: 50px;
+    // text-align: left;
 
     h1 {
       font-size: 65px;
     }
 
     h2 {
-      margin-top: -3px;
-			margin-left: 218px;
+			margin-top: 0px;
+			margin-bottom: 3rem;
 			font-size: 20px;
     }
 
@@ -97,7 +97,13 @@ nav {
   text-align: center;
 
   .main-menu {
-    display: none;
+
+		display: none;
+
+		li + li {
+			margin-top: 1rem;
+		}
+
   }
 
 	@media screen and (min-width: $breakpoint) {
@@ -111,11 +117,11 @@ nav {
 				display: inline-block;
 
 				+ li {
+					margin-top: 0px;
 					margin-left: 2rem;
 				}
 
       }
-
 
     }
 
