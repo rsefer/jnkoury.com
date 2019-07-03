@@ -20,7 +20,7 @@ collections:
     name: 'Commercial'
     output: true
     order: 2
-    img: 'slides/denver1/denver116.jpg'
+    img: 'slides/denver1/denver115.jpg'
   food:
     name: 'Food'
     output: true
