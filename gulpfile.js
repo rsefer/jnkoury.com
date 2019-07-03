@@ -162,6 +162,7 @@ function watches() {
 }
 
 gulp.task('build', gulp.series(gulp.parallel('sass', 'js', 'images', 'videos', 'fonts'), 'svgs', 'jekyll-build'));
+gulp.task('buildquick', gulp.series(gulp.parallel('sass', 'js', 'fonts'), 'svgs', 'jekyll-build'));
 gulp.task('watch', function() {
 	browserSync.init({
 		server: {

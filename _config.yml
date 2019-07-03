@@ -30,6 +30,8 @@ exclude: [
   'gulpfile.js',
   'README.md',
   'SOURCE',
+  'Gemfile',
+  'Gemfile.lock',
   'assets/'
 ]
 languages: ['en']
