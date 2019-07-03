@@ -92,16 +92,6 @@ header {
 
 }
 
-nav,
-section {
-
-	@media screen and (min-width: $breakpoint) {
-		display: inline-block;
-		vertical-align: top;
-	}
-
-}
-
 nav {
 
   text-align: center;
@@ -112,21 +102,17 @@ nav {
 
 	@media screen and (min-width: $breakpoint) {
 
-    padding: 50px 30px 50px 0px;
-	  width: 179px;
-	  font-size: 20px;
-	  line-height: 26px;
-	  text-align: right;
-
     .main-menu {
 
       display: block;
 
 			& > li {
 
-        &:not(:last-child) {
-  				margin-bottom: 0.625rem;
-  			}
+				display: inline-block;
+
+				+ li {
+					margin-left: 2rem;
+				}
 
       }
 
@@ -206,10 +192,34 @@ nav {
 
 section {
 
+	position: relative;
+	margin-top: 2rem;
+	padding-top: 2rem;
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 60%;
+		height: 1px;
+		background: $gray-light;
+	}
+
   @media screen and (min-width: $breakpoint) {
-    padding-left: 30px;
-    border-left: 1px solid $gray-light;
-    min-height: 500px;
+
+		margin-left: auto;
+		margin-right: auto;
+
+		.about & {
+			width: 665px;
+		}
+
+		&:before {
+			width: 12rem;
+		}
+
   }
 
 }
@@ -219,12 +229,9 @@ article {
   font-size: 1rem;
   line-height: 1.25;
 
-  @media screen and (min-width: $breakpoint) {
-    max-width: 690px;
-  }
-
   p {
 
+		margin-top: 0px;
     margin-bottom: 1em;
 
     &.leftCol {
@@ -626,13 +633,26 @@ sup {
 
 	&-item {
 
-		margin-top: 2rem;
+		flex-basis: 100%;
 		text-decoration: none;
 
-		@media screen and (min-width: $breakpoint) {
+		&:nth-child(n+2) {
+			margin-top: 2rem;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		@media screen and (min-width: $screen-sm) {
 
 			flex-basis: 47.5%;
 			margin-top: 0px;
+
+			&:nth-child(n+2) {
+				margin-top: 0px;
+			}
 
 			&:nth-child(n+3) {
 				margin-top: 2.5%;
@@ -643,6 +663,7 @@ sup {
 	}
 
 	.item-title {
+		margin-top: 0.5rem;
 		font-weight: 400;
 	}
 
