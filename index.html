@@ -7,11 +7,15 @@ bodyClasses: index
 <section>
 	<article class="home">
 		<div class="quote-block">
-			<div class="open-quote">&ldquo;</div>
-			<div class="close-quote">&rdquo;</div>
+			<div class="open-quote">“</div>
+			<div class="close-quote">”</div>
 			<div class="quote">
-				Understanding the desired use of space, whether for home, work, or community, is the starting point of design. Quality, scale and place; utilizing the materials harvested and brought to your building site in the most effective way, building design addresses these concepts to enhance, delight and facilitate their intended use.
+				<p>Thirty spokes converge upon a single hub;<br>It is on the hole in the center that the use of the cart hinges.</p>
+				<p>We make a vessel from a lump of clay;<br>It is the empty space within the vessel that makes it useful.</p>
+				<p>We make doors and windows for a room;<br>But it is these empty spaces that make the room liveable.</p>
+				<p>Thus, while the tangible has advantages,<br>It is the intangible that makes it useful.</p>
 			</div>
+			<div class="attribution"><span class="name">-Tao Teh Ching</span></div>
 		</div>
 		<div class="grid">
 			{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}

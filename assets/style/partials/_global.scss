@@ -273,15 +273,23 @@ article {
     text-align: right;
   }
 
-  &.home .quote {
+	&.home .quote-block {
 
-    font-size: 1.125rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
 
-    p {
-      margin-bottom: 0.75em;
-    }
+		.quote {
 
-  }
+			font-size: 1.25rem;
+
+			p {
+				margin-bottom: 0.75em;
+			}
+
+		}
+
+	}
 
   .home-img {
     float: right;
