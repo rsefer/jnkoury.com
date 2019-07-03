@@ -10,12 +10,27 @@ bodyClasses: index
 			<div class="open-quote">&ldquo;</div>
 			<div class="close-quote">&rdquo;</div>
 			<div class="quote">
-				<p>Thirty spokes converge upon a single hub;<br>It is on the hole in the center that the use of the cart hinges.</p>
-				<p>We make a vessel from a lump of clay;<br>It is the empty space within the vessel that makes it useful.</p>
-				<p>We make doors and windows for a room;<br>But it is these empty spaces that make the room liveable.</p>
-				<p>Thus, while the tangible has advantages,<br>It is the intangible that makes it useful.</p>
+				John has a keen sense of listening to our needs and ﬁnding the right way to proceed with the big picture in mind. Our projects are very complex with multiple types of spaces and work ﬂow. Working with John, we developed spaces appropriate for each from our corporate board room and executive offices and staff offices to production and warehouse spaces and all spaces in between.
 			</div>
-			<div class="attribution"><span class="name">-Tao Teh Ching</span></div>
+			<div class="attribution"><span class="name">Charlie Steenrod</span> | Celgard, Commercial Client</div>
+		</div>
+		<div class="grid">
+			{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}
+			{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 and collection.output %}
+			<a href="{{ site.baseurl }}/{{ collection.label }}/" class="grid-item">
+				<div class="poster" style="background-image: url('{{ site.imagebase }}/{{ collection.img }}');"></div>
+				<div class="item-title">{{ collection.name }}</div>
+			</a>
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="quote-block">
+			<div class="open-quote">&ldquo;</div>
+			<div class="close-quote">&rdquo;</div>
+			<div class="quote">
+				During construction we have a schedule and there will always be questions that need answers to keep the project on track. From pre-construction through construction to project close out, John offers project support and attentive response.
+			</div>
+			<div class="attribution"><span class="name">Vince Maizy</span> | Site Superintendent, Myers &amp; Chapman General Contractors</div>
 		</div>
 	</article>
 </section>

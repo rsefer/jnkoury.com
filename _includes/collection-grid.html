@@ -2,7 +2,7 @@
 {% if collection.label == page.collection %}
 {% for item in site[collection.label] %}
 <a href="{{ item.url }}" class="grid-item">
-	<img src="{{ site.imagebase }}/slides/{{ item.slug }}/{% if item.video_slug %}{{ item.video_slug }}{% else %}{{ item.slides.first }}{% endif %}">
+	<div class="poster" style="background-image: url('{{ site.imagebase }}/slides/{{ item.slug }}/{% if item.video_slug %}{{ item.video_slug }}{% else %}{{ item.slides.first }}{% endif %}');"></div>
 	<div class="item-title">{% if item.shortTitle %}{{ item.shortTitle }}{% else %}{{ item.title }}{% endif %}</div>
 </a>
 {% endfor %}

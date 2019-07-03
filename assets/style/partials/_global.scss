@@ -275,7 +275,7 @@ article {
 
   &.home .quote {
 
-    font-size: 1.5rem;
+    font-size: 1.125rem;
 
     p {
       margin-bottom: 0.75em;
@@ -437,6 +437,13 @@ sup {
 
 	position: relative;
 
+	&,
+	.bx-viewport {
+		margin: 0px auto;
+		max-width: 690px;
+		max-height: 388px;
+	}
+
   img {
     width: 100%;
   }
@@ -545,7 +552,7 @@ sup {
 }
 
 .home .quote-block {
-  margin-top: 20px;
+	margin: 0px;
 }
 
 .open-quote,
@@ -646,9 +653,15 @@ sup {
 			margin-top: 2rem;
 		}
 
-		img {
+		.poster {
 			display: block;
 			width: 100%;
+			height: 40vw;
+			background: {
+				size: cover;
+				repeat: no-repeat;
+				position: center center;
+			}
 		}
 
 		@media screen and (min-width: $screen-sm) {
@@ -664,6 +677,13 @@ sup {
 				margin-top: 2.5%;
 			}
 
+			.poster {
+				height: 225px;
+				background: {
+					size: 125% auto;
+				}
+			}
+
 		}
 
 	}
@@ -671,6 +691,10 @@ sup {
 	.item-title {
 		margin-top: 0.5rem;
 		font-weight: 400;
+	}
+
+	.home & {
+		margin: 3rem 0px;
 	}
 
 }

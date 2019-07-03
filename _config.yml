@@ -10,18 +10,22 @@ collections:
     name: 'Industrial'
     output: true
     order: 0
+    img: 'slides/celgard/celgard1.png'
   residential:
     name: 'Residential'
     output: true
     order: 1
+    img: 'slides/mckean/mckean1.jpg'
   commercial:
     name: 'Commercial'
     output: true
     order: 2
+    img: 'slides/denver1/denver116.jpg'
   food:
     name: 'Food'
     output: true
     order: 3
+    img: 'slides/aldi/aldijefferson2.jpg'
   articles:
     name: 'Articles'
     output: false
