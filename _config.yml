@@ -6,16 +6,16 @@ imagebase: '/dist/images'
 
 collections_dir: collections
 collections:
-  process:
-    name: 'Process'
-    output: true
-    order: 0
-    img: 'slides/celgard/celgard1.png'
   people:
     name: 'People'
     output: true
-    order: 1
+    order: 0
     img: 'slides/mckean/mckean1.jpg'
+  process:
+    name: 'Process'
+    output: true
+    order: 1
+    img: 'slides/celgard/celgard1.png'
   articles:
     name: 'Articles'
     output: false

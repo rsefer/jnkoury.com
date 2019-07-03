@@ -6,6 +6,16 @@ bodyClasses: index
 
 <section>
 	<article class="home">
+		<div class="grid">
+			{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}
+			{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 and collection.output %}
+			<a href="{{ site.baseurl }}/{{ collection.label }}/" class="grid-item">
+				<div class="poster" style="background-image: url('{{ site.imagebase }}/{{ collection.img }}');"></div>
+				<div class="item-title">{{ collection.name }}</div>
+			</a>
+			{% endif %}
+			{% endfor %}
+		</div>
 		<div class="quote-block">
 			<div class="open-quote">“</div>
 			<div class="close-quote">”</div>
@@ -16,16 +26,6 @@ bodyClasses: index
 				<p>Thus, while the tangible has advantages,<br>It is the intangible that makes it useful.</p>
 			</div>
 			<div class="attribution"><span class="name">-Tao Teh Ching</span></div>
-		</div>
-		<div class="grid">
-			{% assign collections = site.collections | sort: 'order' %}{% for collection in collections | sort: 'order' %}
-			{% assign collectionSlug = collection.label %}{% assign collectionSize = site.[collectionSlug] | size %}{% if collectionSize > 0 and collection.output %}
-			<a href="{{ site.baseurl }}/{{ collection.label }}/" class="grid-item">
-				<div class="poster" style="background-image: url('{{ site.imagebase }}/{{ collection.img }}');"></div>
-				<div class="item-title">{{ collection.name }}</div>
-			</a>
-			{% endif %}
-			{% endfor %}
 		</div>
 	</article>
 </section>
