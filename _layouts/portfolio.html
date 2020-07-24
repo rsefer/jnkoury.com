@@ -10,7 +10,7 @@
 			<div id="slider">
 				{% for slide in page.slides %}<div class="slider-item">
 					{% if slide contains '.mp4' %}
-					<video width="100%" controls{% if page.video_slug %} poster="{{ site.imagebase }}/slides/{{ page.slug }}/{{ page.video_slug }}"{% endif %}>
+					<video width="100%" controls{% if page.video_slug and forloop.index == 1 %} poster="{{ site.imagebase }}/slides/{{ page.slug }}/{{ page.video_slug }}"{% endif %}>
 						<source src="{{ site.imagebase }}/slides/{{ page.slug }}/{{ slide }}" type="video/mp4">
 					</video>
 					{% else %}
